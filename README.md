@@ -8,3 +8,7 @@ UE4 dependencies located within the normal Build.cs.
 
 ## Overview
 Introduces core types upon which a basic item system might be developed. Currently in development.
+
+## Setup
+If you don't have the dependencies, you should run "Get_GS_DependencyPlugins.bat" - it will automatically pull the
+G.S Edu modules which you don't yet have, and will regenerate your project files.
