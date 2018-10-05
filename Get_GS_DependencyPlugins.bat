@@ -27,10 +27,12 @@ rem		Dependency List, newline for each item
 for %%i in (
 	Items
 ) do (
+if not exist G.S-Edu--%%i (
 wget https://github.com/gameplay-solutions/G.S-Edu--%%i/archive/master.zip || goto WGetError
 7z x master.zip || goto 7ZipError
 del master.zip
-)
+ren G.S-Edu--%%i-master G.S-Edu--%%i
+) else (echo "G.S-Edu--%%i already exists locally, skipping."))
 
 rem 	Now, call UBT so when this script is run you won't need to do so manually.
 call %UBTPath% -ProjectFiles -project=%PROJPath% -game
@@ -38,20 +40,20 @@ pause
 exit /B %ERRORLEVEL%
 
 :InvalidDir
-echo ERROR: This script should be located alongside GSEduWeapons.uplugin, and the entire plugin should be within a valid Plugins folder.
+echo "ERROR: This script should be located alongside GSEduWeapons.uplugin, and the entire plugin should be within a valid Plugins folder."
 goto out
 
 :InvalidPaths
-echo ERROR: Ensure you've altered this script such that UBTPath and PROJPath are both set to valid locations.
+echo "ERROR: Ensure you've altered this script such that UBTPath and PROJPath are both set to valid locations."
 goto out
 
 rem maybe see what this is and do something else?
 :7ZipError
-echo ERROR: Aborting run! Fix the error(s) above!
+echo "ERROR: Aborting run! Fix the error(s) above!"
 goto out
 
 :WGetError
-echo ERROR: Aborting run! Fix the error(s) above! 
+echo "ERROR: Aborting run! Fix the error(s) above!"
 goto out
 
 :out
