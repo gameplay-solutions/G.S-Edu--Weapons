@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"EngineVersion" : "4.20.0",
+	"FriendlyName": "",
+	"Description": "",
+	"Category": "Math",
+	"CreatedBy": "Devlin Willis (ImmutableLambda)",
+	"CreatedByURL": "http://www.gameplay.solutions/devlin",
+	"MarketplaceURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "GSEduWeapons",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "GSEduItems",
+			"Optional": false,
+			"Enabled": true
+		}
+	]
+}
